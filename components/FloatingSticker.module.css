@@ -1,0 +1,7 @@
+.sticker {
+  position: absolute; z-index: 5;
+  animation: float 6s ease-in-out infinite;
+  filter: drop-shadow(4px 4px 0px rgba(0,0,0,0.2));
+  pointer-events: none;
+  line-height: 1;
+}

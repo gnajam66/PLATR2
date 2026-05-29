@@ -1,0 +1,190 @@
+/* ============================================================
+   PLATR v2 — NEO-BRUTALIST DESIGN SYSTEM
+   ============================================================ */
+:root {
+  --acid:      #ccff00;
+  --purple:    #7C3AED;
+  --purple-dk: #5B21B6;
+  --pink:      #ff0099;
+  --black:     #0a0a0a;
+  --white:     #ffffff;
+  --gray:      #f0f0f0;
+  --gray-dk:   #e0e0e0;
+  --border:    4px solid var(--black);
+  --shadow:    6px 6px 0px var(--black);
+  --shadow-sm: 4px 4px 0px var(--black);
+  --radius:    2.5rem;
+  --radius-sm: 1rem;
+  --bounce:    cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --ff-head:   'Space Grotesk', sans-serif;
+  --ff-body:   'DM Sans', sans-serif;
+  --wa-number: '917021266095';
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--ff-body);
+  color: var(--black);
+  background: var(--white);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
+ul, ol { list-style: none; }
+input, textarea, select { font-family: inherit; }
+
+:focus-visible {
+  outline: 3px solid var(--purple);
+  outline-offset: 2px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* ============================================================
+   KEYFRAMES
+   ============================================================ */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(2deg); }
+}
+@keyframes float-reverse {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(-3deg); }
+}
+@keyframes wobble {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(-5deg); }
+  75% { transform: rotate(5deg); }
+  100% { transform: rotate(0deg); }
+}
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(124, 58, 237, 0.4); }
+  50% { box-shadow: 0 0 0 12px rgba(124, 58, 237, 0); }
+}
+
+/* ============================================================
+   TYPOGRAPHY
+   ============================================================ */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--ff-head);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+/* ============================================================
+   BRUTALIST BUTTONS
+   ============================================================ */
+.btn-brutal {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.75rem;
+  font-family: var(--ff-head);
+  font-weight: 700;
+  font-size: 0.95rem;
+  border: var(--border);
+  box-shadow: var(--shadow);
+  border-radius: var(--radius);
+  transition: all 0.2s var(--bounce);
+  text-transform: lowercase;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.btn-brutal:hover {
+  transform: translate(3px, 3px);
+  box-shadow: 2px 2px 0px var(--black);
+}
+.btn-brutal:active {
+  transform: translate(6px, 6px);
+  box-shadow: 0px 0px 0px var(--black);
+}
+.btn-brutal--black {
+  background: var(--black);
+  color: var(--white);
+}
+.btn-brutal--white {
+  background: var(--white);
+  color: var(--black);
+}
+.btn-brutal--purple {
+  background: var(--purple);
+  color: var(--white);
+  border-color: var(--black);
+}
+.btn-brutal--pink {
+  background: var(--pink);
+  color: var(--white);
+  border-color: var(--black);
+}
+.btn-brutal--acid {
+  background: var(--acid);
+  color: var(--black);
+  border-color: var(--black);
+}
+.btn-brutal--whatsapp {
+  background: #25D366;
+  color: var(--white);
+  border-color: var(--black);
+}
+
+/* Wobble button */
+.btn-wobble:hover {
+  animation: wobble 0.5s ease-in-out;
+}
+
+/* ============================================================
+   SECTION
+   ============================================================ */
+.section {
+  padding: 5rem 0;
+  position: relative;
+}
+.section-label {
+  font-family: var(--ff-head);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--purple);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--white);
+  border: var(--border);
+  box-shadow: var(--shadow-sm);
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius);
+  margin-bottom: 1rem;
+}
+.section-title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  text-transform: lowercase;
+  margin-bottom: 0.75rem;
+}
+.section-desc {
+  font-size: 1.05rem;
+  color: #555;
+  max-width: 560px;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 768px) {
+  .container { padding: 0 1rem; }
+  .section { padding: 3rem 0; }
+}

@@ -1,0 +1,16 @@
+.marquee {
+  background: var(--black); color: var(--white);
+  border-top: 4px solid var(--white); border-bottom: 4px solid var(--white);
+  padding: 1rem 0; overflow: hidden;
+  transform: rotate(-1.5deg); margin: -1rem 0;
+  position: relative; z-index: 2;
+}
+.track {
+  display: flex; white-space: nowrap;
+  animation: marquee 30s linear infinite;
+}
+.track span {
+  font-family: var(--ff-head); font-size: 1.3rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.05em;
+  padding-right: 1rem;
+}
