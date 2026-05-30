@@ -110,3 +110,17 @@
   85% { transform: scale(var(--scale)); opacity: 1; }
   100% { transform: scale(0); opacity: 0; }
 }
+
+@media (max-width: 768px) {
+  .gooey-nav-container { border-radius: 1rem; width: 100%; }
+  .gooey-nav-container nav ul {
+    flex-direction: column; gap: 0.25em; width: 100%;
+  }
+  .gooey-nav-container nav ul li { width: 100%; text-align: center; }
+  .gooey-nav-container nav ul li a {
+    display: block; width: 100%; padding: 0.6em 1em;
+    font-size: 1rem;
+  }
+  .gooey-nav-container .effect { display: none; }
+}
+
