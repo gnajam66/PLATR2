@@ -14,3 +14,8 @@
   text-transform: uppercase; letter-spacing: 0.05em;
   padding-right: 1rem;
 }
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
