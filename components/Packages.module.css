@@ -9,10 +9,10 @@
   text-transform: lowercase; transition: all 0.25s var(--bounce);
   cursor: pointer; background: transparent;
 }
-.tab:hover { border-color: var(--acid); color: var(--acid); }
+.tab:hover { border-color: var(--purple); color: var(--purple); }
 .tabActive {
-  background: var(--acid); color: var(--black);
-  border-color: var(--acid); box-shadow: 4px 4px 0px rgba(204,255,0,0.3);
+  background: var(--purple); color: var(--white);
+  border-color: var(--purple); box-shadow: 4px 4px 0px rgba(124,58,237,0.3);
 }
 
 .grid {
@@ -36,7 +36,7 @@
 .cardFeatured:hover { box-shadow: 2px 2px 0px var(--purple); }
 .popular {
   position: absolute; top: -12px; right: 12px;
-  background: var(--pink); color: var(--white);
+  background: var(--purple); color: var(--white);
   font-family: var(--ff-head); font-size: 0.75rem; font-weight: 700;
   padding: 0.3rem 0.8rem; border-radius: 9999px;
   border: 2px solid var(--black); box-shadow: 3px 3px 0px var(--black);

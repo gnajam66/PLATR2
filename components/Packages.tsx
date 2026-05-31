@@ -20,7 +20,7 @@ export default function Packages() {
   return (
     <section className={`section ${styles.section}`} id="packages">
       <div className="container">
-        <span className="section-label" style={{ background: "var(--black)", color: "var(--acid)", borderColor: "var(--acid)" }}>
+        <span className="section-label" style={{ background: "var(--black)", color: "var(--purple)", borderColor: "var(--purple)" }}>
           📦 packages
         </span>
         <h2 className="section-title" style={{ color: "var(--white)" }}>curated packages for every occasion</h2>
@@ -70,7 +70,7 @@ export default function Packages() {
                     starting from <strong>{pkg.price}</strong>
                   </div>
                   <button
-                    className={`btn-brutal ${pkg.featured ? "btn-brutal--pink" : "btn-brutal--black"} btn-wobble`}
+                    className={`btn-brutal ${pkg.featured ? "btn-brutal--purple" : "btn-brutal--black"} btn-wobble`}
                     onClick={() => handleRequest(catName, pkg.name)}
                   >
                     request this package
@@ -82,7 +82,7 @@ export default function Packages() {
                 <h3>have something specific in mind?</h3>
                 <p>tell us your exact requirements — cuisine, headcount, budget, theme — and we&apos;ll craft a bespoke proposal within 24 hours.</p>
                 <button
-                  className="btn-brutal btn-brutal--acid btn-wobble"
+                  className="btn-brutal btn-brutal--purple btn-wobble"
                   onClick={() => handleRequest("custom requirement", "custom")}
                 >
                   send custom inquiry →

@@ -74,5 +74,5 @@
   height: 8px; width: 8px; border-radius: 50%;
   cursor: pointer; transition: background-color 150ms;
 }
-.carousel-indicator.active { background-color: var(--acid); }
+.carousel-indicator.active { background-color: var(--purple); }
 .carousel-indicator.inactive { background-color: #555; }

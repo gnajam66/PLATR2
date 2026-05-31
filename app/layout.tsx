@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, DM_Sans } from "next/font/google";
 import "./globals.css";
+import StickyNav from "@/components/StickyNav";
+import Footer from "@/components/Footer";
+import WhatsAppFAB from "@/components/WhatsAppFAB";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -52,7 +55,12 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${spaceGrotesk.variable} ${dmSans.variable}`}>
-      <body>{children}</body>
+      <body>
+        <StickyNav />
+        {children}
+        <Footer />
+        <WhatsAppFAB />
+      </body>
     </html>
   );
 }

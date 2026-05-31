@@ -1,5 +1,7 @@
 "use client";
 import { useRef, useEffect, useState, useCallback } from 'react';
+import { usePathname, useRouter } from 'next/navigation';
+import Link from 'next/link';
 import './GooeyNav.css';
 
 type GooeyNavItem = { label: string; href: string };
@@ -12,7 +14,6 @@ type GooeyNavProps = {
   particleR?: number;
   timeVariance?: number;
   colors?: number[];
-  initialActiveIndex?: number;
   onItemClick?: (index: number, href: string) => void;
 };
 
@@ -24,14 +25,27 @@ export default function GooeyNav({
   particleR = 100,
   timeVariance = 300,
   colors = [1, 2, 3, 1, 2, 3, 1, 4],
-  initialActiveIndex = 0,
   onItemClick,
 }: GooeyNavProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const navRef = useRef<HTMLUListElement>(null);
   const filterRef = useRef<HTMLSpanElement>(null);
   const textRef = useRef<HTMLSpanElement>(null);
-  const [activeIndex, setActiveIndex] = useState(initialActiveIndex);
+  const pathname = usePathname();
+  const router = useRouter();
+
+  // Determine active index from current route
+  const getActiveFromPath = useCallback(() => {
+    const idx = items.findIndex(item => pathname === item.href);
+    return idx >= 0 ? idx : -1;
+  }, [items, pathname]);
+
+  const [activeIndex, setActiveIndex] = useState(getActiveFromPath);
+
+  // Sync active index when route changes
+  useEffect(() => {
+    setActiveIndex(getActiveFromPath());
+  }, [pathname, getActiveFromPath]);
 
   const noise = (n = 1) => n / 2 - Math.random() * n;
 
@@ -116,6 +130,7 @@ export default function GooeyNav({
     }
     if (filterRef.current) makeParticles(filterRef.current);
     onItemClick?.(index, items[index].href);
+    router.push(items[index].href);
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLAnchorElement>, index: number) => {
@@ -128,12 +143,14 @@ export default function GooeyNav({
 
   useEffect(() => {
     if (!navRef.current || !containerRef.current) return;
+    if (activeIndex < 0) return;
     const activeLi = navRef.current.querySelectorAll('li')[activeIndex];
     if (activeLi) {
       updateEffectPosition(activeLi);
       textRef.current?.classList.add('active');
     }
     const resizeObserver = new ResizeObserver(() => {
+      if (activeIndex < 0) return;
       const currentActiveLi = navRef.current?.querySelectorAll('li')[activeIndex];
       if (currentActiveLi) updateEffectPosition(currentActiveLi);
     });
@@ -147,9 +164,9 @@ export default function GooeyNav({
         <ul ref={navRef}>
           {items.map((item, index) => (
             <li key={index} className={activeIndex === index ? 'active' : ''} onClick={e => handleClick(e, index)}>
-              <a href={item.href} onClick={e => e.preventDefault()} onKeyDown={e => handleKeyDown(e, index)}>
+              <Link href={item.href} onClick={e => e.preventDefault()} onKeyDown={e => handleKeyDown(e, index)}>
                 {item.label}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>

@@ -29,7 +29,7 @@ export default function Hero() {
 
       {/* interactive wave animation */}
       <Waves
-        lineColor="#5227FF"
+        lineColor="#d4d4d4"
         backgroundColor="transparent"
         waveSpeedX={0.02}
         waveSpeedY={0.01}
@@ -60,7 +60,7 @@ export default function Hero() {
             vendor coordination, menu curation, and flawless execution so you don&apos;t have to.
           </motion.p>
           <motion.div className={styles.actions} custom={3} variants={bounceUp}>
-            <a href="#inquiry" className="btn-brutal btn-brutal--black btn-wobble">
+            <a href="/contact" className="btn-brutal btn-brutal--purple btn-wobble">
               send an inquiry →
             </a>
             <a

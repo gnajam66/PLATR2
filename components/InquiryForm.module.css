@@ -23,8 +23,8 @@
   box-shadow: 4px 4px 0px var(--purple);
 }
 .fieldError input, .fieldError textarea {
-  border-color: var(--pink) !important;
-  box-shadow: 4px 4px 0px var(--pink) !important;
+  border-color: #dc2626 !important;
+  box-shadow: 4px 4px 0px #dc2626 !important;
 }
 .actions { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 0.5rem; }
 
