@@ -139,8 +139,9 @@ h1, h2, h3, h4, h5, h6 {
    SECTION
    ============================================================ */
 .section {
-  padding: 5rem 0;
+  padding: 7rem 0 5rem;
   position: relative;
+  min-height: calc(100vh - 100px);
 }
 .section-label {
   font-family: var(--ff-head);
@@ -175,5 +176,5 @@ h1, h2, h3, h4, h5, h6 {
    ============================================================ */
 @media (max-width: 768px) {
   .container { padding: 0 1rem; }
-  .section { padding: 3rem 0; }
+  .section { padding: 5.5rem 0 3rem; min-height: auto; }
 }

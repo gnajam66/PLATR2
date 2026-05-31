@@ -1,6 +1,7 @@
 .cta {
-  background: var(--purple); padding: 6rem 0;
+  background: var(--purple); padding: 8rem 0 5rem;
   position: relative; overflow: hidden;
+  min-height: 60vh; display: flex; align-items: center;
 }
 .headline {
   font-size: clamp(2.5rem, 7vw, 5rem);

@@ -2,17 +2,16 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { CATEGORIES, PACKAGES } from "@/lib/data";
+import Link from "next/link";
 import styles from "./Packages.module.css";
 
 export default function Packages() {
   const [active, setActive] = useState("office-lunch");
 
   const handleRequest = (catName: string, pkgName: string) => {
-    const details = document.getElementById("form-details") as HTMLTextAreaElement;
-    const catField = document.getElementById("form-category") as HTMLInputElement;
-    if (details) details.value = `Category: ${catName}\nPackage: ${pkgName}\n\nAdditional details: `;
-    if (catField) catField.value = catName;
-    document.getElementById("inquiry")?.scrollIntoView({ behavior: "smooth" });
+    const msg = `Category: ${catName}\nPackage: ${pkgName}`;
+    const url = `/contact?details=${encodeURIComponent(msg)}`;
+    window.location.href = url;
   };
 
   const pkgs = PACKAGES[active] || [];

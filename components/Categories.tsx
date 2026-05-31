@@ -1,15 +1,10 @@
 "use client";
 import { motion } from "framer-motion";
 import { CATEGORIES } from "@/lib/data";
+import Link from "next/link";
 import styles from "./Categories.module.css";
 
 export default function Categories() {
-  const handleView = (catId: string) => {
-    const tab = document.querySelector(`[data-cat="${catId}"]`) as HTMLButtonElement;
-    if (tab) tab.click();
-    document.getElementById("packages")?.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
     <section className={`section ${styles.section}`} id="categories">
       <div className="container">
@@ -31,12 +26,12 @@ export default function Categories() {
               <div className={styles.icon}>{cat.icon}</div>
               <h3 className={styles.name}>{cat.name}</h3>
               <p className={styles.desc}>{cat.desc}</p>
-              <button
+              <Link
+                href="/packages"
                 className={`btn-brutal btn-brutal--purple ${styles.cta}`}
-                onClick={() => handleView(cat.id)}
               >
                 view packages →
-              </button>
+              </Link>
             </motion.div>
           ))}
         </div>
