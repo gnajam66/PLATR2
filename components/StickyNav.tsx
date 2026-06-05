@@ -6,10 +6,10 @@ import styles from "./StickyNav.module.css";
 import GooeyNav from "./GooeyNav";
 
 const navItems = [
-  { label: "how it works", href: "/how-it-works" },
-  { label: "categories", href: "/categories" },
-  { label: "packages", href: "/packages" },
-  { label: "contact", href: "/contact" },
+  { label: "how it works", href: "/#how-it-works" },
+  { label: "categories", href: "/#categories" },
+  { label: "packages", href: "/#packages-preview" },
+  { label: "contact", href: "/#contact" },
 ];
 
 export default function StickyNav() {

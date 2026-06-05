@@ -1,0 +1,31 @@
+.section { background: var(--purple-dk); }
+.grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+.card {
+  background: var(--white); border: var(--border);
+  box-shadow: var(--shadow); border-radius: var(--radius-sm);
+  padding: 1.75rem 1.5rem; text-align: center;
+  transition: transform 0.3s var(--bounce), box-shadow 0.3s;
+}
+.card:hover {
+  transform: translate(3px, 3px) rotate(0deg) !important;
+  box-shadow: 2px 2px 0px var(--black);
+}
+.icon {
+  font-size: 2.5rem; margin-bottom: 0.75rem;
+}
+.title {
+  font-family: var(--ff-head); font-size: 1.05rem; font-weight: 700;
+  text-transform: lowercase; margin-bottom: 0.25rem;
+}
+.sub { font-size: 0.85rem; color: #777; }
+
+@media (max-width: 768px) {
+  .grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .card { transform: rotate(0deg) !important; }
+}
+@media (max-width: 480px) {
+  .grid { grid-template-columns: 1fr; }
+}

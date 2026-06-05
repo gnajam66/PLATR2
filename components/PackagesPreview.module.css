@@ -1,0 +1,47 @@
+.section { background: var(--black); }
+.tableWrap {
+  margin-top: 2.5rem; background: var(--white);
+  border: var(--border); box-shadow: 8px 8px 0px var(--purple);
+  border-radius: var(--radius-sm); overflow: hidden;
+  max-width: 720px;
+}
+.table {
+  width: 100%; border-collapse: collapse;
+  font-family: var(--ff-body);
+}
+.table th {
+  font-family: var(--ff-head); font-size: 0.8rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.1em;
+  color: var(--purple); padding: 1rem 1.5rem; text-align: left;
+  border-bottom: 3px solid var(--black);
+  background: var(--purple-lt);
+}
+.table td {
+  padding: 1.1rem 1.5rem; font-size: 0.95rem; color: #444;
+  border-bottom: 2px solid var(--gray-dk);
+}
+.table tr:last-child td { border-bottom: none; }
+.featured {
+  background: var(--purple-lt);
+}
+.featured td { font-weight: 600; color: var(--black); }
+.pkgName {
+  font-family: var(--ff-head); font-weight: 700;
+  text-transform: lowercase; color: var(--black) !important;
+  position: relative;
+}
+.badge {
+  display: inline-block; font-size: 0.65rem; font-weight: 700;
+  background: var(--purple); color: var(--white);
+  padding: 0.15rem 0.5rem; border-radius: 9999px;
+  margin-right: 0.5rem; vertical-align: middle;
+  text-transform: lowercase;
+}
+.price {
+  font-family: var(--ff-head); font-weight: 700; color: var(--black) !important;
+}
+.actions { margin-top: 2rem; }
+
+@media (max-width: 768px) {
+  .table th, .table td { padding: 0.75rem 1rem; font-size: 0.85rem; }
+}

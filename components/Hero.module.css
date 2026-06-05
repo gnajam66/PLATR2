@@ -34,6 +34,13 @@
   font-size: 1.1rem; color: var(--gray-mid);
   max-width: 480px; line-height: 1.6;
 }
+.trustLine {
+  display: flex; gap: 1.25rem; flex-wrap: wrap;
+}
+.trustLine span {
+  font-family: var(--ff-head); font-size: 0.85rem; font-weight: 600;
+  color: var(--purple); letter-spacing: -0.01em;
+}
 .actions { display: flex; gap: 0.75rem; flex-wrap: wrap; }
 .right { position: relative; }
 .carouselWrap {

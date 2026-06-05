@@ -1,0 +1,36 @@
+.section { background: var(--gray); }
+.vendorCard {
+  margin-top: 2.5rem; display: flex; align-items: center; gap: 1.5rem;
+  background: var(--white); border: var(--border);
+  box-shadow: var(--shadow); border-radius: var(--radius-sm);
+  padding: 2rem; max-width: 600px;
+}
+.vendorIcon {
+  width: 64px; height: 64px; display: flex; align-items: center;
+  justify-content: center; font-size: 2rem; border-radius: 1rem;
+  background: var(--purple-lt); border: 3px solid var(--purple);
+  flex-shrink: 0; box-shadow: 3px 3px 0px var(--black);
+}
+.vendorTitle {
+  font-family: var(--ff-head); font-size: 1.1rem; font-weight: 700;
+  text-transform: lowercase; margin-bottom: 0.25rem;
+}
+.vendorDesc { font-size: 0.9rem; color: #555; line-height: 1.5; }
+.tags {
+  margin-top: 2rem; display: flex; flex-wrap: wrap; gap: 0.6rem;
+}
+.tag {
+  font-family: var(--ff-head); font-size: 0.85rem; font-weight: 600;
+  padding: 0.5rem 1.1rem; border: 3px solid var(--black);
+  border-radius: 9999px; background: var(--white);
+  box-shadow: 3px 3px 0px var(--black); text-transform: lowercase;
+  transition: all 0.2s var(--bounce); cursor: default;
+}
+.tag:hover {
+  background: var(--purple); color: var(--white);
+  transform: translate(2px, 2px); box-shadow: 1px 1px 0px var(--black);
+}
+
+@media (max-width: 768px) {
+  .vendorCard { flex-direction: column; text-align: center; }
+}

@@ -56,9 +56,14 @@ export default function Hero() {
             <span className={styles.gradient}>sorted</span> from one place.
           </motion.h1>
           <motion.p className={styles.sub} custom={2} variants={bounceUp}>
-            from daily office lunches to large-scale corporate events — PLATR handles
-            vendor coordination, menu curation, and flawless execution so you don&apos;t have to.
+            From daily office lunches to large-scale corporate events, PLATR helps you
+            discover, compare and request curated catering solutions without chasing multiple vendors.
           </motion.p>
+          <motion.div className={styles.trustLine} custom={2.5} variants={bounceUp}>
+            <span>✓ One inquiry</span>
+            <span>✓ Multiple vetted vendors</span>
+            <span>✓ End-to-end coordination</span>
+          </motion.div>
           <motion.div className={styles.actions} custom={3} variants={bounceUp}>
             <a href="/contact" className="btn-brutal btn-brutal--purple btn-wobble">
               send an inquiry →

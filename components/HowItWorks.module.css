@@ -1,31 +1,52 @@
 .section { background: var(--white); }
-.grid {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
-  margin-top: 2.5rem;
+.timeline {
+  margin-top: 3rem; display: flex; flex-direction: column; gap: 0;
+  max-width: 600px; margin-left: auto; margin-right: auto;
+}
+.step {
+  display: flex; gap: 1.5rem; align-items: flex-start;
+  position: relative;
+}
+.stepLine {
+  display: flex; flex-direction: column; align-items: center;
+  flex-shrink: 0; width: 52px;
+}
+.dot {
+  width: 52px; height: 52px; border-radius: 50%;
+  background: var(--purple-lt); border: 3px solid var(--purple);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.4rem; position: relative; z-index: 2;
+  box-shadow: 3px 3px 0px var(--black);
+}
+.connector {
+  width: 3px; height: 100%; min-height: 40px;
+  background: var(--purple); opacity: 0.3;
+  flex: 1;
 }
 .card {
   background: var(--gray); border: var(--border);
   box-shadow: var(--shadow); border-radius: var(--radius-sm);
-  padding: 2rem 1.5rem; position: relative; overflow: hidden;
+  padding: 1.5rem; flex: 1; position: relative; overflow: hidden;
+  margin-bottom: 1rem;
   transition: transform 0.3s var(--bounce), box-shadow 0.3s;
 }
 .card:hover {
-  transform: translate(3px, 3px) rotate(0deg) !important;
+  transform: translate(3px, 3px);
   box-shadow: 2px 2px 0px var(--black);
 }
 .num {
-  font-family: var(--ff-head); font-size: 4rem; font-weight: 700;
-  color: rgba(10,10,10,0.06); position: absolute; top: 0.5rem; right: 1rem;
+  font-family: var(--ff-head); font-size: 3.5rem; font-weight: 700;
+  color: rgba(10,10,10,0.05); position: absolute; top: 0.25rem; right: 0.75rem;
   line-height: 1;
 }
-.emoji { font-size: 2.5rem; margin-bottom: 1rem; }
 .cardTitle {
-  font-family: var(--ff-head); font-size: 1.15rem; font-weight: 700;
-  text-transform: lowercase; margin-bottom: 0.5rem;
+  font-family: var(--ff-head); font-size: 1.1rem; font-weight: 700;
+  text-transform: lowercase; margin-bottom: 0.35rem;
 }
-.cardDesc { font-size: 0.9rem; color: #555; line-height: 1.6; }
+.cardDesc { font-size: 0.9rem; color: #555; line-height: 1.5; }
 
 @media (max-width: 768px) {
-  .grid { grid-template-columns: 1fr; }
-  .card { transform: rotate(0deg) !important; }
+  .timeline { max-width: 100%; }
+  .stepLine { width: 40px; }
+  .dot { width: 40px; height: 40px; font-size: 1.1rem; }
 }

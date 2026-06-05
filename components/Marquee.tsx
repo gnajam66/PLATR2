@@ -1,7 +1,7 @@
 import styles from "./Marquee.module.css";
 
 export default function Marquee() {
-  const text = "one platform • vetted vendors • reliable execution • single point of contact • ";
+  const text = "✓ Corporate Lunches • ✓ Board Meetings • ✓ Conferences • ✓ Events • ✓ Festive Celebrations • ✓ Custom Requirements • ";
   return (
     <div className={styles.marquee}>
       <div className={styles.track}>

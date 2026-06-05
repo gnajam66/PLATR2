@@ -10,22 +10,26 @@ export default function ContactCTA() {
 
       <div className="container" style={{ position: "relative", zIndex: 2, textAlign: "center" }}>
         <h2 className={styles.headline}>
-          ready to simplify<br />your corporate food?
+          stop searching for caterers<br />every time.
         </h2>
         <p className={styles.sub}>
-          reach out on whatsapp for the fastest response, or drop us an email — we&apos;re here to help.
+          Tell us your requirement and we&apos;ll help you find the right catering solution.
         </p>
         <div className={styles.actions}>
           <a
-            href="https://wa.me/917021266095?text=Hi%20PLATR%2C%20I%27d%20like%20to%20discuss%20our%20corporate%20food%20requirements."
+            href="/contact"
             className="btn-brutal btn-brutal--white btn-wobble"
+          >
+            🟣 send inquiry
+          </a>
+          <a
+            href="https://wa.me/917021266095?text=Hi%20PLATR%2C%20I%27d%20like%20to%20discuss%20our%20corporate%20food%20requirements."
+            className="btn-brutal btn-brutal--whatsapp btn-wobble"
             target="_blank"
             rel="noopener"
+            style={{ borderColor: "var(--white)" }}
           >
             💬 chat on whatsapp
-          </a>
-          <a href="mailto:hello@platr.in" className="btn-brutal btn-brutal--black btn-wobble" style={{ borderColor: "var(--white)" }}>
-            ✉️ email us
           </a>
         </div>
       </div>
