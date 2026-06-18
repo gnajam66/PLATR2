@@ -38,18 +38,30 @@ export const STATS = [
   { value: "100%", label: "end-to-end execution" },
 ] as const;
 
-// "Built on Real Execution" credibility marquee — real clients + achievements.
-export const EXECUTION_MARQUEE = [
+// "Built on Real Execution" — credibility section data.
+// Reputed institutions & enterprises served, shown as a client row.
+export const CLIENTS = [
   "TIFR",
   "VVF India Ltd",
   "Lodha Foundation",
   "TISS",
   "US Vitamins",
-  "5000+ Corporate Guests Served",
-  "4000-Pax International Conference Executed",
+] as const;
+
+// Enterprise operations imagery (reuses existing assets — swap for real photos later).
+export const OPERATIONS = [
+  { image: "/images/corporate-event.png", label: "Corporate events & conferences", sub: "Large-format setups and multi-day catering." },
+  { image: "/images/boardroom-catering.png", label: "Executive & boardroom dining", sub: "Premium plated service for leadership." },
+  { image: "/images/carousel-1.png", label: "Large-scale food operations", sub: "High-volume meals, delivered on time." },
+] as const;
+
+// Secondary scrolling marquee — capability & scale phrases.
+export const CAPABILITIES = [
   "Corporate Catering Experience",
   "Institutional Events",
   "Large-Scale Food Operations",
+  "5,000+ Corporate Guests Served",
+  "4,000-Pax International Conference Executed",
 ] as const;
 
 // Testimonials — replace names, roles, and quotes with real ones.

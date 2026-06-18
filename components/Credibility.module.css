@@ -1,0 +1,86 @@
+.section {
+  background: var(--surface);
+  padding: 5.5rem 0 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.head { text-align: center; margin-bottom: 3rem; }
+.title {
+  font-family: var(--ff-head);
+  font-size: clamp(2rem, 4vw, 2.9rem);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  color: var(--charcoal);
+}
+.divider {
+  display: block; width: 56px; height: 2px;
+  background: var(--saffron); border-radius: 2px;
+  margin: 1rem auto 0;
+}
+
+/* metrics */
+.metrics {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  padding: 2.25rem 1.5rem;
+  background: var(--charcoal);
+  border-radius: var(--radius);
+}
+.metric { text-align: center; }
+.metric strong {
+  display: block;
+  font-family: var(--ff-head); font-weight: 600;
+  font-size: clamp(1.9rem, 3.6vw, 2.6rem);
+  color: var(--saffron); line-height: 1; margin-bottom: 0.4rem;
+}
+.metric span { font-size: 0.84rem; color: rgba(255, 255, 255, 0.72); }
+
+/* enterprise imagery */
+.ops {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem; margin-top: 2.5rem;
+}
+.op {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.opMedia { position: relative; height: 210px; }
+.opMedia img { object-fit: cover; }
+.opBody { padding: 1.15rem 1.25rem 1.4rem; }
+.opBody h3 {
+  font-family: var(--ff-head); font-weight: 600; font-size: 1.2rem;
+  color: var(--charcoal); margin-bottom: 0.3rem;
+}
+.opBody p { font-size: 0.9rem; color: var(--muted); line-height: 1.45; }
+
+/* client names */
+.clients { margin-top: 3rem; text-align: center; }
+.clientsLabel {
+  display: block;
+  font-family: var(--ff-body); font-size: 0.72rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.16em; color: var(--muted);
+  margin-bottom: 1.4rem;
+}
+.clientRow {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
+  gap: 1.25rem 2.75rem;
+}
+.client {
+  font-family: var(--ff-head); font-weight: 600;
+  font-size: clamp(1.15rem, 2vw, 1.6rem);
+  color: var(--charcoal); opacity: 0.55;
+  transition: opacity 0.2s ease;
+}
+.client:hover { opacity: 0.9; }
+
+@media (max-width: 900px) {
+  .metrics { grid-template-columns: repeat(2, 1fr); gap: 1.75rem 1rem; }
+  .ops { grid-template-columns: 1fr; max-width: 460px; margin-left: auto; margin-right: auto; }
+}
+@media (max-width: 768px) {
+  .section { padding: 4rem 0 0; }
+  .head { margin-bottom: 2.25rem; }
+  .clientRow { gap: 1rem 1.75rem; }
+}
