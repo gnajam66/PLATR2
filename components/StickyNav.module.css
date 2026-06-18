@@ -18,7 +18,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 74px;
+  height: 88px;
 }
 
 /* solid state — scrolled, or any non-homepage route, or menu open */
@@ -31,7 +31,7 @@
 }
 
 .logo { display: inline-flex; align-items: center; flex-shrink: 0; z-index: 110; }
-.logoImg { height: 38px; width: auto; transition: filter 0.3s ease; }
+.logoImg { height: 56px; width: auto; transition: filter 0.3s ease; }
 /* white logo over the dark hero; natural logo on the solid bar */
 .nav:not(.solid) .logoImg { filter: brightness(0) invert(1); }
 
@@ -91,6 +91,8 @@
 }
 
 @media (max-width: 860px) {
+  .inner { height: 72px; }
+  .logoImg { height: 46px; }
   .burger { display: block; }
   .links {
     position: fixed; top: 0; right: 0; z-index: 105;
