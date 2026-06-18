@@ -9,28 +9,28 @@
   width: 100%; border-collapse: collapse;
 }
 .table th {
-  font-family: var(--ff-head); font-size: 0.85rem; font-weight: 700;
-  text-transform: lowercase; letter-spacing: 0.05em;
-  padding: 1rem 1.5rem; border-bottom: 3px solid var(--black);
+  font-family: var(--ff-head); font-size: 0.95rem; font-weight: 600;
+  text-transform: none; letter-spacing: 0;
+  padding: 1rem 1.5rem; border-bottom: 1px solid var(--line);
 }
 .thTraditional {
-  background: #fef2f2; color: #dc2626; text-align: left; width: 50%;
+  background: var(--gray); color: var(--muted); text-align: left; width: 50%;
 }
 .thPlatr {
-  background: var(--purple-lt); color: var(--purple); text-align: left; width: 50%;
+  background: var(--saffron-lt); color: var(--terracotta); text-align: left; width: 50%;
 }
 .table td {
   padding: 1rem 1.5rem; font-size: 0.95rem;
-  border-bottom: 2px solid var(--gray-dk);
+  border-bottom: 1px solid var(--line);
 }
 .table tr:last-child td { border-bottom: none; }
 .tdTraditional {
-  color: #999; text-decoration: line-through;
-  text-decoration-color: rgba(220, 38, 38, 0.4);
+  color: var(--muted); text-decoration: line-through;
+  text-decoration-color: rgba(177, 74, 46, 0.35);
 }
 .tdPlatr {
-  font-weight: 600; color: var(--black);
-  background: rgba(124, 58, 237, 0.03);
+  font-weight: 600; color: var(--charcoal);
+  background: rgba(177, 74, 46, 0.04);
 }
 
 @media (max-width: 768px) {

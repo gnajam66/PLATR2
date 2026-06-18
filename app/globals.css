@@ -1,31 +1,55 @@
 /* ============================================================
-   PLATR v3 — MINIMAL DESIGN SYSTEM (Purple + White + Black)
+   PLATR v4 — REFINED PREMIUM DESIGN SYSTEM
+   Design Option A · "Saffron & Charcoal"
+   Charcoal #1A1A1A · Terracotta #B14A2E · Saffron #E0A53E · Cream #FBF7EF
    ============================================================ */
 :root {
-  --purple:    #7C3AED;
-  --purple-dk: #5B21B6;
-  --purple-lt: #EDE9FE;
-  --black:     #0a0a0a;
+  /* --- brand palette --- */
+  --charcoal:   #1A1A1A;
+  --terracotta: #B14A2E;
+  --terra-dk:   #8E3A22;
+  --saffron:    #E0A53E;
+  --saffron-dk: #C8862A;
+  --saffron-lt: #FBEFD7;
+  --cream:      #FBF7EF;
+
+  /* --- semantic tokens --- */
+  --primary:   var(--charcoal);
+  --secondary: var(--terracotta);
+  --accent:    var(--saffron);
+  --bg:        var(--cream);
+  --surface:   #ffffff;
+  --text:      #1A1A1A;
+  --muted:     #6B655C;
+  --line:      #E9E1D1;
+
+  /* --- legacy aliases (so existing components inherit the new palette) --- */
+  --purple:    var(--terracotta);   /* primary CTA / brand accent */
+  --purple-dk: var(--terra-dk);
+  --purple-lt: var(--saffron-lt);   /* light tint for badges / icon chips */
+  --black:     var(--charcoal);
   --white:     #ffffff;
-  --gray:      #f5f5f5;
-  --gray-dk:   #e0e0e0;
-  --gray-mid:  #888888;
-  --border:    4px solid var(--black);
-  --shadow:    6px 6px 0px var(--black);
-  --shadow-sm: 4px 4px 0px var(--black);
-  --radius:    2.5rem;
-  --radius-sm: 1rem;
-  --bounce:    cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  --ff-head:   'Space Grotesk', sans-serif;
-  --ff-body:   'DM Sans', sans-serif;
+  --gray:      #F3ECDE;             /* warm light section background */
+  --gray-dk:   var(--line);
+  --gray-mid:  var(--muted);
+
+  /* --- refined surface tokens (soft, not brutalist) --- */
+  --border:    1px solid var(--line);
+  --shadow:    0 14px 38px rgba(26, 22, 18, 0.10);
+  --shadow-sm: 0 4px 16px rgba(26, 22, 18, 0.07);
+  --radius:    1.5rem;
+  --radius-sm: 0.75rem;
+  --bounce:    cubic-bezier(0.22, 1, 0.36, 1);
+  --ff-head:   'Fraunces', Georgia, 'Times New Roman', serif;
+  --ff-body:   'Inter', system-ui, -apple-system, sans-serif;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body {
   font-family: var(--ff-body);
-  color: var(--black);
-  background: var(--white);
+  color: var(--text);
+  background: var(--bg);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
@@ -70,8 +94,8 @@ input, textarea, select { font-family: inherit; }
   100% { transform: translateX(-50%); }
 }
 @keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(124, 58, 237, 0.4); }
-  50% { box-shadow: 0 0 0 12px rgba(124, 58, 237, 0); }
+  0%, 100% { box-shadow: 0 0 0 0 rgba(177, 74, 46, 0.4); }
+  50% { box-shadow: 0 0 0 12px rgba(177, 74, 46, 0); }
 }
 
 /* ============================================================
@@ -79,9 +103,10 @@ input, textarea, select { font-family: inherit; }
    ============================================================ */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--ff-head);
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  line-height: 1.1;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.12;
+  font-optical-sizing: auto;
 }
 
 /* ============================================================
@@ -91,83 +116,83 @@ h1, h2, h3, h4, h5, h6 {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.85rem 1.75rem;
-  font-family: var(--ff-head);
-  font-weight: 700;
+  padding: 0.9rem 1.7rem;
+  font-family: var(--ff-body);
+  font-weight: 600;
   font-size: 0.95rem;
-  border: var(--border);
-  box-shadow: var(--shadow);
-  border-radius: var(--radius);
-  transition: all 0.2s var(--bounce);
-  text-transform: lowercase;
+  letter-spacing: -0.005em;
+  border: 1px solid transparent;
+  box-shadow: var(--shadow-sm);
+  border-radius: 0.7rem;
+  transition: transform 0.25s var(--bounce), box-shadow 0.25s var(--bounce),
+    background-color 0.2s ease;
   cursor: pointer;
   white-space: nowrap;
 }
 .btn-brutal:hover {
-  transform: translate(3px, 3px);
-  box-shadow: 2px 2px 0px var(--black);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
 }
 .btn-brutal:active {
-  transform: translate(6px, 6px);
-  box-shadow: 0px 0px 0px var(--black);
+  transform: translateY(0);
+  box-shadow: var(--shadow-sm);
 }
 .btn-brutal--black {
-  background: var(--black);
-  color: var(--white);
+  background: var(--charcoal);
+  color: #fff;
 }
+.btn-brutal--black:hover { background: #000; }
 .btn-brutal--white {
-  background: var(--white);
-  color: var(--black);
+  background: var(--surface);
+  color: var(--charcoal);
+  border-color: var(--line);
 }
 .btn-brutal--purple {
-  background: var(--purple);
-  color: var(--white);
-  border-color: var(--black);
+  background: var(--terracotta);
+  color: #fff;
 }
+.btn-brutal--purple:hover { background: var(--terra-dk); }
 .btn-brutal--whatsapp {
   background: #25D366;
-  color: var(--white);
-  border-color: var(--black);
+  color: #fff;
 }
+.btn-brutal--whatsapp:hover { background: #1ebe5a; }
 
-/* Wobble button */
-.btn-wobble:hover {
-  animation: wobble 0.5s ease-in-out;
-}
+/* legacy hook — wobble removed for the refined look (kept as a no-op alias) */
+.btn-wobble:hover { transform: translateY(-2px); }
 
 /* ============================================================
    SECTION
    ============================================================ */
 .section {
-  padding: 7rem 0 5rem;
+  padding: 6rem 0 5rem;
   position: relative;
-  min-height: calc(100vh - 100px);
 }
 .section-label {
-  font-family: var(--ff-head);
-  font-size: 0.8rem;
-  font-weight: 700;
+  font-family: var(--ff-body);
+  font-size: 0.72rem;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.15em;
-  color: var(--purple);
+  letter-spacing: 0.18em;
+  color: var(--terracotta);
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  background: var(--white);
-  border: var(--border);
-  box-shadow: var(--shadow-sm);
-  padding: 0.4rem 1rem;
-  border-radius: var(--radius);
-  margin-bottom: 1rem;
+  gap: 0.45rem;
+  background: var(--saffron-lt);
+  border: 1px solid var(--line);
+  box-shadow: none;
+  padding: 0.4rem 0.9rem;
+  border-radius: 9999px;
+  margin-bottom: 1.1rem;
 }
 .section-title {
-  font-size: clamp(2rem, 5vw, 3.5rem);
-  text-transform: lowercase;
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  font-weight: 600;
   margin-bottom: 0.75rem;
 }
 .section-desc {
   font-size: 1.05rem;
-  color: var(--gray-mid);
+  color: var(--muted);
   max-width: 560px;
 }
 

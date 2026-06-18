@@ -5,33 +5,27 @@ import styles from "./HowItWorks.module.css";
 const steps = [
   {
     num: "01",
-    title: "tell us what you need",
-    desc: "Office lunch, board meeting, event, conference or custom requirement.",
+    title: "Tell us what you need",
+    desc: "Office lunch, boardroom, conference, event or a custom brief — in one place.",
     icon: "📋",
   },
   {
     num: "02",
-    title: "choose a package",
-    desc: "Select the option closest to your budget and requirement.",
-    icon: "🎯",
+    title: "Compare curated packages",
+    desc: "Browse transparent, vetted options matched to your headcount and budget.",
+    icon: "🍽️",
   },
   {
     num: "03",
-    title: "send inquiry",
-    desc: "Fill in a simple form or WhatsApp us.",
+    title: "Send one inquiry",
+    desc: "Confirm your pick via a quick form or WhatsApp — no vendor hunting.",
     icon: "📨",
   },
   {
     num: "04",
-    title: "we coordinate everything",
-    desc: "Vendor sourcing, menu planning, logistics and execution.",
+    title: "We coordinate & deliver",
+    desc: "Sourcing, menu, logistics and on-site execution, handled end-to-end.",
     icon: "🤝",
-  },
-  {
-    num: "05",
-    title: "enjoy the event",
-    desc: "You focus on your team. We handle the food.",
-    icon: "🍽️",
   },
 ];
 
@@ -55,7 +49,7 @@ export default function HowItWorks() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
         >
-          five steps to seamless corporate dining
+          Four steps to seamless corporate dining
         </motion.h2>
         <motion.p
           className="section-desc"
@@ -64,7 +58,7 @@ export default function HowItWorks() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.15 }}
         >
-          no back-and-forth with multiple vendors. just tell us what you need.
+          No back-and-forth with multiple vendors — just tell us what you need.
         </motion.p>
 
         <div className={styles.timeline}>

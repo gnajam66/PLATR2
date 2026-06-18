@@ -9,8 +9,8 @@ export default function Categories() {
     <section className={`section ${styles.section}`} id="categories">
       <div className="container">
         <span className="section-label">🎯 requirement categories</span>
-        <h2 className="section-title">what are you looking for?</h2>
-        <p className="section-desc">select a category to explore tailored packages built for your specific need.</p>
+        <h2 className="section-title">What are you looking for?</h2>
+        <p className="section-desc">Select a category to explore tailored packages built for your specific need.</p>
 
         <div className={styles.grid}>
           {CATEGORIES.map((cat, i) => (
@@ -20,17 +20,16 @@ export default function Categories() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
-              transition={{ delay: i * 0.08, duration: 0.5, ease: [0.175, 0.885, 0.32, 1.275] }}
-              style={{ transform: `rotate(${(i % 3 - 1) * 1.2}deg)` }}
+              transition={{ delay: i * 0.08, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
             >
               <div className={styles.icon}>{cat.icon}</div>
               <h3 className={styles.name}>{cat.name}</h3>
               <p className={styles.desc}>{cat.desc}</p>
               <Link
-                href="/packages"
+                href={`/packages?cat=${cat.id}`}
                 className={`btn-brutal btn-brutal--purple ${styles.cta}`}
               >
-                view packages →
+                View packages →
               </Link>
             </motion.div>
           ))}

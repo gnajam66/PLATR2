@@ -3,80 +3,79 @@
   display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 2rem; margin-bottom: 2rem;
 }
 .tab {
-  font-family: var(--ff-head); font-size: 0.85rem; font-weight: 600;
-  padding: 0.55rem 1.1rem; border: 2px solid rgba(255,255,255,0.2);
-  border-radius: 9999px; color: rgba(255,255,255,0.6);
-  text-transform: lowercase; transition: all 0.25s var(--bounce);
+  font-family: var(--ff-body); font-size: 0.85rem; font-weight: 600;
+  padding: 0.55rem 1.1rem; border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 9999px; color: rgba(255,255,255,0.65);
+  text-transform: none; transition: all 0.25s var(--bounce);
   cursor: pointer; background: transparent;
 }
-.tab:hover { border-color: var(--purple); color: var(--purple); }
+.tab:hover { border-color: var(--saffron); color: var(--saffron); }
 .tabActive {
-  background: var(--purple); color: var(--white);
-  border-color: var(--purple); box-shadow: 4px 4px 0px rgba(124,58,237,0.3);
+  background: var(--saffron); color: var(--charcoal);
+  border-color: var(--saffron); box-shadow: none;
 }
 
 .grid {
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
 }
 .card {
-  background: var(--white); border: var(--border);
-  box-shadow: var(--shadow); border-radius: var(--radius-sm);
+  background: var(--surface); border: 1px solid var(--line);
+  box-shadow: var(--shadow-sm); border-radius: var(--radius);
   padding: 2rem 1.5rem; display: flex; flex-direction: column;
-  transition: transform 0.3s var(--bounce), box-shadow 0.3s;
+  transition: transform 0.3s var(--bounce), box-shadow 0.3s var(--bounce);
   position: relative;
 }
 .card:hover {
-  transform: translate(3px, 3px) rotate(0deg) !important;
-  box-shadow: 2px 2px 0px var(--black);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
 }
 .cardFeatured {
-  border-color: var(--purple); border-width: 4px;
-  box-shadow: 6px 6px 0px var(--purple);
+  border-color: var(--terracotta); border-width: 2px;
+  box-shadow: var(--shadow);
 }
-.cardFeatured:hover { box-shadow: 2px 2px 0px var(--purple); }
+.cardFeatured:hover { box-shadow: var(--shadow); }
 .popular {
   position: absolute; top: -12px; right: 12px;
-  background: var(--purple); color: var(--white);
-  font-family: var(--ff-head); font-size: 0.75rem; font-weight: 700;
+  background: var(--terracotta); color: #fff;
+  font-family: var(--ff-body); font-size: 0.7rem; font-weight: 600;
   padding: 0.3rem 0.8rem; border-radius: 9999px;
-  border: 2px solid var(--black); box-shadow: 3px 3px 0px var(--black);
-  text-transform: lowercase;
+  border: none; box-shadow: var(--shadow-sm);
+  text-transform: uppercase; letter-spacing: 0.06em;
 }
 .tier {
   font-family: var(--ff-head); font-size: 3.5rem; font-weight: 700;
   color: rgba(10,10,10,0.06); line-height: 1;
 }
 .pkgName {
-  font-family: var(--ff-head); font-size: 1.4rem; font-weight: 700;
-  text-transform: lowercase; margin-bottom: 1rem;
+  font-family: var(--ff-head); font-size: 1.5rem; font-weight: 600;
+  text-transform: capitalize; margin-bottom: 1rem;
 }
 .list { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1.25rem; flex: 1; }
-.list li { font-size: 0.9rem; color: #444; }
+.list li { font-size: 0.9rem; color: var(--muted); }
 .price {
-  font-size: 0.9rem; color: #666; margin-bottom: 1.25rem;
+  font-size: 0.9rem; color: var(--muted); margin-bottom: 1.25rem;
 }
 .price strong {
-  font-family: var(--ff-head); font-size: 1.4rem; font-weight: 700;
-  color: var(--black);
+  font-family: var(--ff-head); font-size: 1.4rem; font-weight: 600;
+  color: var(--charcoal);
 }
 
 .customCard {
-  grid-column: 1 / -1; background: var(--white);
-  border: var(--border); box-shadow: var(--shadow);
-  border-radius: var(--radius-sm); padding: 3rem;
+  grid-column: 1 / -1; background: var(--surface);
+  border: 1px solid var(--line); box-shadow: var(--shadow-sm);
+  border-radius: var(--radius); padding: 3rem;
   text-align: center;
 }
 .customCard h3 {
-  font-family: var(--ff-head); font-size: 1.5rem; font-weight: 700;
-  text-transform: lowercase; margin-bottom: 0.75rem;
+  font-family: var(--ff-head); font-size: 1.6rem; font-weight: 600;
+  text-transform: none; margin-bottom: 0.75rem;
 }
 .customCard p {
-  font-size: 1rem; color: #555; max-width: 480px;
+  font-size: 1rem; color: var(--muted); max-width: 480px;
   margin: 0 auto 1.5rem; line-height: 1.6;
 }
 
 @media (max-width: 768px) {
   .grid { grid-template-columns: 1fr; }
-  .card { transform: rotate(0deg) !important; }
   .tabs { justify-content: center; }
 }

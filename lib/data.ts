@@ -24,6 +24,48 @@ export type PackageTier = {
   featured?: boolean;
 };
 
+/* ============================================================
+   PLACEHOLDER CONTENT — EDIT ME
+   Fill these with real numbers, client logos, photos, and quotes
+   once available. Used by the homepage Showcase / Social Proof.
+   ============================================================ */
+
+// Headline figures shown in the hero trust strip — grounded in real execution.
+export const STATS = [
+  { value: "5,000+", label: "corporate guests served" },
+  { value: "4,000-pax", label: "international conference executed" },
+  { value: "5+", label: "reputed institutions served" },
+  { value: "100%", label: "end-to-end execution" },
+] as const;
+
+// "Built on Real Execution" credibility marquee — real clients + achievements.
+export const EXECUTION_MARQUEE = [
+  "TIFR",
+  "VVF India Ltd",
+  "Lodha Foundation",
+  "TISS",
+  "US Vitamins",
+  "5000+ Corporate Guests Served",
+  "4000-Pax International Conference Executed",
+  "Corporate Catering Experience",
+  "Institutional Events",
+  "Large-Scale Food Operations",
+] as const;
+
+// Testimonials — replace names, roles, and quotes with real ones.
+export type Testimonial = {
+  quote: string;
+  name: string;
+  role: string;
+  company: string;
+};
+
+export const TESTIMONIALS: Testimonial[] = [
+  { quote: "One inquiry and PLATR handled vendors, menus and logistics for our 400-person offsite. We didn't make a single follow-up call.", name: "Placeholder Name", role: "Head of People Ops", company: "Northwind" },
+  { quote: "Daily lunches for the whole office finally feel effortless — consistent quality, transparent pricing, and a single point of contact.", name: "Placeholder Name", role: "Office Manager", company: "Vertex" },
+  { quote: "The boardroom spreads genuinely impressed our investors. Premium feel, delivered without the usual coordination headache.", name: "Placeholder Name", role: "Executive Assistant", company: "Lumen Labs" },
+];
+
 export const PACKAGES: Record<string, PackageTier[]> = {
   "office-lunch": [
     { tier: "01", name: "essential", items: ["rotating weekly menu", "1 main + 2 sides + dal + rice", "disposable packaging"], price: "₹180 / pax" },

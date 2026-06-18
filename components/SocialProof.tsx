@@ -1,76 +1,42 @@
 "use client";
 import { motion } from "framer-motion";
+import { TESTIMONIALS } from "@/lib/data";
 import styles from "./SocialProof.module.css";
-
-const eventTypes = [
-  "Office lunches",
-  "Leadership meetings",
-  "Townhalls",
-  "Conferences",
-  "Employee celebrations",
-  "Product launches",
-  "Team offsites",
-  "Festive gifting",
-];
 
 export default function SocialProof() {
   return (
     <section className={`section ${styles.section}`} id="social-proof">
       <div className="container">
-        <motion.span
-          className="section-label"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        >
-          🏢 built for
-        </motion.span>
-        <motion.h2
-          className="section-title"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-        >
-          built for every corporate food need
-        </motion.h2>
+        <span className="section-label">★ social proof</span>
+        <h2 className="section-title">Teams that stopped chasing caterers.</h2>
+        <p className="section-desc">
+          What the people running corporate food at scale say about working with PLATR.
+        </p>
 
-        <motion.div
-          className={styles.vendorCard}
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.15 }}
-        >
-          <div className={styles.vendorIcon}>🌐</div>
-          <div>
-            <h3 className={styles.vendorTitle}>curated vendor network</h3>
-            <p className={styles.vendorDesc}>
-              Working with trusted catering partners across multiple cuisines and
-              event formats.
-            </p>
-          </div>
-        </motion.div>
-
-        <div className={styles.tags}>
-          {eventTypes.map((tag, i) => (
-            <motion.span
-              key={tag}
-              className={styles.tag}
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{
-                delay: 0.2 + i * 0.06,
-                duration: 0.4,
-                ease: [0.175, 0.885, 0.32, 1.275],
-              }}
+        <div className={styles.grid}>
+          {TESTIMONIALS.map((t, i) => (
+            <motion.figure
+              key={`${t.company}-${i}`}
+              className={styles.card}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.5, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
             >
-              {tag}
-            </motion.span>
+              <div className={styles.stars} aria-label="5 out of 5 stars">★★★★★</div>
+              <blockquote className={styles.quote}>&ldquo;{t.quote}&rdquo;</blockquote>
+              <figcaption className={styles.person}>
+                <span className={styles.avatar} aria-hidden="true">{t.company.charAt(0)}</span>
+                <span className={styles.who}>
+                  <strong>{t.name}</strong>
+                  <em>{t.role}, {t.company}</em>
+                </span>
+              </figcaption>
+            </motion.figure>
           ))}
         </div>
+
+        <p className={styles.note}>* Placeholder testimonials — replace with real client quotes before launch.</p>
       </div>
     </section>
   );

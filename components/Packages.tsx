@@ -1,17 +1,28 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { CATEGORIES, PACKAGES } from "@/lib/data";
-import Link from "next/link";
 import styles from "./Packages.module.css";
 
 export default function Packages() {
   const [active, setActive] = useState("office-lunch");
+  const [prefill, setPrefill] = useState<{ pax?: string; date?: string }>({});
+
+  // Honour the hero Requirement Selector: /packages?cat=<id>&pax=&date=
+  useEffect(() => {
+    const sp = new URLSearchParams(window.location.search);
+    const cat = sp.get("cat");
+    if (cat && CATEGORIES.some((c) => c.id === cat)) setActive(cat);
+    setPrefill({ pax: sp.get("pax") || undefined, date: sp.get("date") || undefined });
+  }, []);
 
   const handleRequest = (catName: string, pkgName: string) => {
-    const msg = `Category: ${catName}\nPackage: ${pkgName}`;
-    const url = `/contact?details=${encodeURIComponent(msg)}`;
-    window.location.href = url;
+    const params = new URLSearchParams();
+    params.set("category", catName);
+    params.set("details", `Category: ${catName}\nPackage: ${pkgName}`);
+    if (prefill.pax) params.set("pax", prefill.pax);
+    if (prefill.date) params.set("date", prefill.date);
+    window.location.href = `/contact?${params.toString()}`;
   };
 
   const pkgs = PACKAGES[active] || [];
@@ -49,15 +60,14 @@ export default function Packages() {
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.35, ease: [0.175, 0.885, 0.32, 1.275] }}
           >
-            {pkgs.length > 0 ? pkgs.map((pkg, i) => {
+            {pkgs.length > 0 ? pkgs.map((pkg) => {
               const catName = CATEGORIES.find(c => c.id === active)?.name || active;
               return (
                 <div
                   key={pkg.name}
                   className={`${styles.card} ${pkg.featured ? styles.cardFeatured : ""}`}
-                  style={{ transform: `rotate(${(i - 1) * 1.2}deg)` }}
                 >
-                  {pkg.featured && <div className={styles.popular}>🔥 popular</div>}
+                  {pkg.featured && <div className={styles.popular}>★ popular</div>}
                   <div className={styles.tier}>{pkg.tier}</div>
                   <h3 className={styles.pkgName}>{pkg.name}</h3>
                   <ul className={styles.list}>

@@ -5,33 +5,23 @@ import styles from "./WhyPlatr.module.css";
 const reasons = [
   {
     icon: "📞",
-    title: "one point of contact",
-    desc: "No need to coordinate with multiple caterers.",
+    title: "One point of contact",
+    desc: "One inquiry replaces calls to a dozen caterers.",
   },
   {
     icon: "🌐",
-    title: "curated vendor network",
-    desc: "Access trusted vendors for different budgets and requirements.",
-  },
-  {
-    icon: "⚡",
-    title: "faster procurement",
-    desc: "Submit one inquiry and receive relevant options.",
-  },
-  {
-    icon: "🎯",
-    title: "tailored packages",
-    desc: "From 20 pax lunches to 2000+ attendee events.",
+    title: "Curated vendor network",
+    desc: "Vetted partners across cuisines, budgets and event formats.",
   },
   {
     icon: "💰",
-    title: "transparent pricing",
-    desc: "Clear package structure with no surprises.",
+    title: "Transparent pricing",
+    desc: "Clear per-person packages, with no surprise line items.",
   },
   {
     icon: "🤝",
-    title: "end-to-end execution",
-    desc: "We coordinate vendors so your team doesn\u2019t have to.",
+    title: "End-to-end execution",
+    desc: "Sourcing, menus, logistics and on-site delivery — all handled.",
   },
 ];
 
@@ -55,8 +45,8 @@ export default function WhyPlatr() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
         >
-          why companies choose{" "}
-          <span style={{ color: "var(--purple)" }}>PLATR</span>
+          Why companies choose{" "}
+          <span style={{ color: "var(--terracotta)" }}>PLATR</span>
         </motion.h2>
         <motion.p
           className="section-desc"
@@ -65,7 +55,7 @@ export default function WhyPlatr() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.15 }}
         >
-          everything you need to simplify corporate food, in one place.
+          Everything you need to simplify corporate food, in one place.
         </motion.p>
 
         <div className={styles.grid}>
@@ -79,9 +69,8 @@ export default function WhyPlatr() {
               transition={{
                 delay: i * 0.08,
                 duration: 0.5,
-                ease: [0.175, 0.885, 0.32, 1.275],
+                ease: [0.22, 1, 0.36, 1],
               }}
-              style={{ transform: `rotate(${(i % 3 - 1) * 1.2}deg)` }}
             >
               <div className={styles.icon}>{r.icon}</div>
               <h3 className={styles.cardTitle}>{r.title}</h3>

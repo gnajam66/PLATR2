@@ -1,20 +1,23 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, DM_Sans } from "next/font/google";
+import { Fraunces, Inter } from "next/font/google";
 import "./globals.css";
 import StickyNav from "@/components/StickyNav";
 import Footer from "@/components/Footer";
 import WhatsAppFAB from "@/components/WhatsAppFAB";
 
-const spaceGrotesk = Space_Grotesk({
+// Variable fonts — omit `weight` to expose the full axis range (per Next 16 font docs).
+// Fraunces: premium editorial serif for headings. Inter: crisp, B2B-legible body.
+const fraunces = Fraunces({
   subsets: ["latin"],
   variable: "--ff-head",
-  weight: ["400", "500", "600", "700"],
+  display: "swap",
+  axes: ["opsz", "SOFT", "WONK"],
 });
 
-const dmSans = DM_Sans({
+const inter = Inter({
   subsets: ["latin"],
   variable: "--ff-body",
-  weight: ["400", "500", "600", "700"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -54,7 +57,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${spaceGrotesk.variable} ${dmSans.variable}`}>
+    <html lang="en" className={`${fraunces.variable} ${inter.variable}`}>
       <body>
         <StickyNav />
         {children}

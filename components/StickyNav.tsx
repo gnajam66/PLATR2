@@ -6,10 +6,10 @@ import styles from "./StickyNav.module.css";
 import GooeyNav from "./GooeyNav";
 
 const navItems = [
-  { label: "how it works", href: "/#how-it-works" },
-  { label: "categories", href: "/#categories" },
-  { label: "packages", href: "/#packages-preview" },
-  { label: "contact", href: "/#contact" },
+  { label: "How it works", href: "/#how-it-works" },
+  { label: "Categories", href: "/#categories" },
+  { label: "Packages", href: "/#packages-preview" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 export default function StickyNav() {
@@ -54,7 +54,7 @@ export default function StickyNav() {
             style={{ fontSize: "0.85rem", padding: "0.6rem 1.25rem" }}
             onClick={() => setMenuOpen(false)}
           >
-            send inquiry
+            Get a quote
           </Link>
         </div>
       </div>

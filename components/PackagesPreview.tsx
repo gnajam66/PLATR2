@@ -16,9 +16,9 @@ export default function PackagesPreview() {
         <motion.span
           className="section-label"
           style={{
-            background: "var(--black)",
-            color: "var(--purple)",
-            borderColor: "var(--purple)",
+            background: "transparent",
+            color: "var(--saffron)",
+            borderColor: "var(--saffron)",
           }}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -35,7 +35,7 @@ export default function PackagesPreview() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
         >
-          transparent pricing, no surprises
+          Transparent pricing, no surprises
         </motion.h2>
         <motion.p
           className="section-desc"
@@ -45,7 +45,7 @@ export default function PackagesPreview() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.15 }}
         >
-          indicative starting prices — we tailor everything to your exact need.
+          Indicative starting prices — we tailor everything to your exact need.
         </motion.p>
 
         <motion.div
@@ -58,9 +58,9 @@ export default function PackagesPreview() {
           <table className={styles.table}>
             <thead>
               <tr>
-                <th>package</th>
-                <th>suitable for</th>
-                <th>starting from</th>
+                <th>Package</th>
+                <th>Suitable for</th>
+                <th>Starting from</th>
               </tr>
             </thead>
             <tbody>
@@ -70,7 +70,7 @@ export default function PackagesPreview() {
                   className={i === 1 ? styles.featured : ""}
                 >
                   <td className={styles.pkgName}>
-                    {i === 1 && <span className={styles.badge}>🔥 popular</span>}
+                    {i === 1 && <span className={styles.badge}>★ popular</span>}
                     {pkg.name}
                   </td>
                   <td>{pkg.suitableFor}</td>
@@ -90,9 +90,9 @@ export default function PackagesPreview() {
         >
           <Link
             href="/packages"
-            className="btn-brutal btn-brutal--purple btn-wobble"
+            className="btn-brutal btn-brutal--purple"
           >
-            view all packages →
+            View all packages →
           </Link>
         </motion.div>
       </div>
