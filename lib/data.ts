@@ -39,13 +39,15 @@ export const STATS = [
 ] as const;
 
 // "Built on Real Execution" — credibility section data.
-// Reputed institutions & enterprises served, shown as a client row.
+// Reputed institutions & enterprises served, shown as a client logo wall.
+// Drop transparent-background logo files in /public/logos/ with these names.
+// Until a file exists, the component falls back to the client name as text.
 export const CLIENTS = [
-  "TIFR",
-  "VVF India Ltd",
-  "Lodha Foundation",
-  "TISS",
-  "US Vitamins",
+  { name: "TIFR", logo: "/logos/tifr.png" },
+  { name: "VVF India Ltd", logo: "/logos/vvf.png" },
+  { name: "Lodha Foundation", logo: "/logos/lodha.png" },
+  { name: "TISS", logo: "/logos/tiss.png" },
+  { name: "USV", logo: "/logos/usv.png" },
 ] as const;
 
 // Enterprise operations imagery (reuses existing assets — swap for real photos later).

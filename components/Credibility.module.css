@@ -65,15 +65,26 @@
 }
 .clientRow {
   display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
-  gap: 1.25rem 2.75rem;
+  gap: 1.75rem 3rem;
 }
-.client {
+.clientLogo {
+  height: 46px;
+  width: auto;
+  max-width: 160px;
+  object-fit: contain;
+  filter: grayscale(1);
+  opacity: 0.65;
+  transition: filter 0.25s ease, opacity 0.25s ease;
+}
+.clientLogo:hover { filter: grayscale(0); opacity: 1; }
+/* fallback shown until a logo file exists in /public/logos/ */
+.clientText {
   font-family: var(--ff-head); font-weight: 600;
-  font-size: clamp(1.15rem, 2vw, 1.6rem);
+  font-size: clamp(1.15rem, 2vw, 1.55rem);
   color: var(--charcoal); opacity: 0.55;
   transition: opacity 0.2s ease;
 }
-.client:hover { opacity: 0.9; }
+.clientText:hover { opacity: 0.9; }
 
 @media (max-width: 900px) {
   .metrics { grid-template-columns: repeat(2, 1fr); gap: 1.75rem 1rem; }
@@ -82,5 +93,6 @@
 @media (max-width: 768px) {
   .section { padding: 4rem 0 0; }
   .head { margin-bottom: 2.25rem; }
-  .clientRow { gap: 1rem 1.75rem; }
+  .clientRow { gap: 1.25rem 2rem; }
+  .clientLogo { height: 38px; max-width: 120px; }
 }

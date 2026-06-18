@@ -1,9 +1,25 @@
 "use client";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { STATS, CLIENTS, OPERATIONS } from "@/lib/data";
 import Marquee from "./Marquee";
 import styles from "./Credibility.module.css";
+
+function ClientLogo({ name, logo }: { name: string; logo: string }) {
+  const [failed, setFailed] = useState(false);
+  if (failed) return <span className={styles.clientText}>{name}</span>;
+  return (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src={logo}
+      alt={name}
+      className={styles.clientLogo}
+      loading="lazy"
+      onError={() => setFailed(true)}
+    />
+  );
+}
 
 export default function Credibility() {
   return (
@@ -59,7 +75,7 @@ export default function Credibility() {
           <span className={styles.clientsLabel}>Trusted by leading institutions &amp; enterprises</span>
           <div className={styles.clientRow}>
             {CLIENTS.map((c) => (
-              <span key={c} className={styles.client}>{c}</span>
+              <ClientLogo key={c.name} name={c.name} logo={c.logo} />
             ))}
           </div>
         </div>
