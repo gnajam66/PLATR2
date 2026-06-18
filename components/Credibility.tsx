@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { STATS, CLIENTS, OPERATIONS } from "@/lib/data";
+import { CLIENTS, OPERATIONS } from "@/lib/data";
 import Marquee from "./Marquee";
 import styles from "./Credibility.module.css";
 
@@ -31,22 +31,20 @@ export default function Credibility() {
           <span className={styles.divider} aria-hidden="true" />
         </div>
 
-        {/* operational metrics — primary credibility */}
-        <div className={styles.metrics}>
-          {STATS.map((s, i) => (
-            <motion.div
-              key={s.label}
-              className={styles.metric}
-              initial={{ opacity: 0, y: 18 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
-            >
-              <strong>{s.value}</strong>
-              <span>{s.label}</span>
-            </motion.div>
-          ))}
-        </div>
+        {/* credibility statement */}
+        <motion.div
+          className={styles.statement}
+          initial={{ opacity: 0, y: 18 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+        >
+          <p className={styles.statementLead}>Real events, real scale — fully managed.</p>
+          <p className={styles.statementSub}>
+            From daily office meals to multi-day international conferences, PLATR sources,
+            coordinates and executes corporate food end-to-end — so your team never chases a vendor.
+          </p>
+        </motion.div>
 
         {/* enterprise operations imagery */}
         <div className={styles.ops}>

@@ -2,10 +2,8 @@
 import { useState, FormEvent } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { CONFIG, CATEGORIES, STATS } from "@/lib/data";
+import { CONFIG, CATEGORIES } from "@/lib/data";
 import styles from "./Hero.module.css";
-
-const HERO_METRICS = STATS.slice(0, 3);
 
 export default function Hero() {
   const [submitted, setSubmitted] = useState(false);
@@ -60,13 +58,10 @@ export default function Hero() {
             <li>Transparent per-head pricing</li>
             <li>End-to-end, on-site execution</li>
           </ul>
-          <div className={styles.miniStats}>
-            {HERO_METRICS.map((s) => (
-              <div key={s.label} className={styles.miniStat}>
-                <strong>{s.value}</strong>
-                <span>{s.label}</span>
-              </div>
-            ))}
+          <div className={styles.assure}>
+            <span>Free, no-obligation quote</span>
+            <span>Dedicated coordinator</span>
+            <span>Reliable on-time delivery</span>
           </div>
         </div>
 
