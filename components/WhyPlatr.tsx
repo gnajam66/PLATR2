@@ -1,29 +1,30 @@
 "use client";
+import { useState } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import styles from "./WhyPlatr.module.css";
 
 const reasons = [
-  {
-    icon: "📞",
-    title: "One point of contact",
-    desc: "One inquiry replaces calls to a dozen caterers.",
-  },
-  {
-    icon: "🌐",
-    title: "Curated vendor network",
-    desc: "Vetted partners across cuisines, budgets and event formats.",
-  },
-  {
-    icon: "💰",
-    title: "Transparent pricing",
-    desc: "Clear per-person packages, with no surprise line items.",
-  },
-  {
-    icon: "🤝",
-    title: "End-to-end execution",
-    desc: "Sourcing, menus, logistics and on-site delivery — all handled.",
-  },
+  { icon: "📞", image: "/images/one-point-of-contact.png", title: "One point of contact", desc: "One inquiry replaces calls to a dozen caterers." },
+  { icon: "🌐", image: "/images/curated-vendor-network.png", title: "Curated vendor network", desc: "Vetted partners across cuisines, budgets and event formats." },
+  { icon: "💰", image: "/images/transparent-pricing.png", title: "Transparent pricing", desc: "Clear per-person packages, with no surprise line items." },
+  { icon: "🤝", image: "/images/end-to-end-execution.png", title: "End-to-end execution", desc: "Sourcing, menus, logistics and on-site delivery — all handled." },
 ];
+
+function ReasonImage({ image, title, icon }: { image: string; title: string; icon: string }) {
+  const [failed, setFailed] = useState(false);
+  if (failed) return <div className={styles.iconFallback}>{icon}</div>;
+  return (
+    <Image
+      src={image}
+      alt={title}
+      fill
+      sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 280px"
+      className={styles.cardImage}
+      onError={() => setFailed(true)}
+    />
+  );
+}
 
 export default function WhyPlatr() {
   return (
@@ -66,15 +67,15 @@ export default function WhyPlatr() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
-              transition={{
-                delay: i * 0.08,
-                duration: 0.5,
-                ease: [0.22, 1, 0.36, 1],
-              }}
+              transition={{ delay: i * 0.08, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
             >
-              <div className={styles.icon}>{r.icon}</div>
-              <h3 className={styles.cardTitle}>{r.title}</h3>
-              <p className={styles.cardDesc}>{r.desc}</p>
+              <div className={styles.imageContainer}>
+                <ReasonImage image={r.image} title={r.title} icon={r.icon} />
+              </div>
+              <div className={styles.cardContent}>
+                <h3 className={styles.cardTitle}>{r.title}</h3>
+                <p className={styles.cardDesc}>{r.desc}</p>
+              </div>
             </motion.div>
           ))}
         </div>
