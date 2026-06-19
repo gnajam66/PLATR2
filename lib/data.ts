@@ -16,6 +16,17 @@ export const CATEGORIES = [
   { id: "custom", name: "custom requirement", icon: "✏️", desc: "something unique? tell us what you need and we'll build a bespoke solution." },
 ] as const;
 
+// Category card images — drop files in /public/categories/ with these names.
+// Falls back to the category emoji icon until a matching file exists.
+export const CATEGORY_IMAGES: Record<string, string> = {
+  "office-lunch": "/categories/office-lunch.png",
+  "board-meetings": "/categories/board-meetings.png",
+  "corporate-events": "/categories/corporate-events.png",
+  "conferences": "/categories/conferences.png",
+  "festive-occasions": "/categories/festive-occasions.png",
+  "custom": "/categories/custom.png",
+};
+
 export type PackageTier = {
   tier: string;
   name: string;
