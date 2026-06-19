@@ -25,10 +25,9 @@ function PackageDialog({ cat, onClose }: { cat: Cat; onClose: () => void }) {
   return (
     <div className={styles.overlay} onClick={onClose} role="dialog" aria-modal="true" aria-label={`${cat.name} packages`}>
       <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
-        <button className={styles.close} onClick={onClose} aria-label="Close">×</button>
-
         <div className={styles.modalMedia}>
           <CategoryImage cat={cat} />
+          <button className={styles.close} onClick={onClose} aria-label="Close">×</button>
           <div className={styles.modalTitle}>
             <h3>{cat.name}</h3>
             <p>{cat.desc}</p>

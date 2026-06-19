@@ -1,8 +1,8 @@
 "use client";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import Image from "next/image";
-import { CLIENTS, OPERATIONS } from "@/lib/data";
+import { CLIENTS } from "@/lib/data";
+import Coverflow from "./Coverflow";
 import styles from "./Credibility.module.css";
 
 function ClientLogo({ name, logo }: { name: string; logo: string }) {
@@ -10,13 +10,7 @@ function ClientLogo({ name, logo }: { name: string; logo: string }) {
   if (failed) return <span className={styles.clientText}>{name}</span>;
   return (
     // eslint-disable-next-line @next/next/no-img-element
-    <img
-      src={logo}
-      alt={name}
-      className={styles.clientLogo}
-      loading="lazy"
-      onError={() => setFailed(true)}
-    />
+    <img src={logo} alt={name} className={styles.clientLogo} loading="lazy" onError={() => setFailed(true)} />
   );
 }
 
@@ -45,27 +39,8 @@ export default function Credibility() {
           </p>
         </motion.div>
 
-        {/* enterprise operations imagery */}
-        <div className={styles.ops}>
-          {OPERATIONS.map((o, i) => (
-            <motion.div
-              key={o.label}
-              className={styles.op}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.5, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
-            >
-              <div className={styles.opMedia}>
-                <Image src={o.image} alt={o.label} fill sizes="(max-width: 768px) 100vw, 360px" />
-              </div>
-              <div className={styles.opBody}>
-                <h3>{o.label}</h3>
-                <p>{o.sub}</p>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+        {/* 3D perspective coverflow of real operations */}
+        <Coverflow />
 
         {/* client names */}
         <div className={styles.clients}>

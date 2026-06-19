@@ -61,11 +61,14 @@ export const CLIENTS = [
   { name: "USV", logo: "/logos/usv.png" },
 ] as const;
 
-// Enterprise operations imagery (reuses existing assets — swap for real photos later).
+// Enterprise operations imagery for the 3D coverflow carousel
+// (reuses existing assets — swap for real photos later).
 export const OPERATIONS = [
   { image: "/images/corporate-event.png", label: "Corporate events & conferences", sub: "Large-format setups and multi-day catering." },
   { image: "/images/boardroom-catering.png", label: "Executive & boardroom dining", sub: "Premium plated service for leadership." },
-  { image: "/images/carousel-1.png", label: "Large-scale food operations", sub: "High-volume meals, delivered on time." },
+  { image: "/images/carousel-1.png", label: "Daily office lunch programs", sub: "High-volume meals, delivered on time." },
+  { image: "/images/carousel-3.png", label: "Conferences & summits", sub: "Scalable catering for large gatherings." },
+  { image: "/images/carousel-4.png", label: "Festive catering & gifting", sub: "Curated festive menus and hampers." },
 ] as const;
 
 // Secondary scrolling marquee — capability & scale phrases.
