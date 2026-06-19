@@ -3,7 +3,6 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { CLIENTS, OPERATIONS } from "@/lib/data";
-import Marquee from "./Marquee";
 import styles from "./Credibility.module.css";
 
 function ClientLogo({ name, logo }: { name: string; logo: string }) {
@@ -78,9 +77,6 @@ export default function Credibility() {
           </div>
         </div>
       </div>
-
-      {/* secondary scrolling marquee */}
-      <Marquee />
     </section>
   );
 }

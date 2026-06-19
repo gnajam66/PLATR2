@@ -1,28 +1,31 @@
-/* secondary scrolling strip — sits at the bottom of the credibility section */
+/* thin fixed utility bar at the very top of the page (above the navbar) */
 .marquee {
-  margin-top: 3.25rem;
-  padding: 1.1rem 0;
-  border-top: 1px solid var(--line);
-  background: var(--bg);
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 95;
+  height: var(--bar-h);
+  display: flex;
+  align-items: center;
+  background: var(--charcoal);
   overflow: hidden;
 }
 .track {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1.9rem;
   width: max-content;
-  animation: execMarquee 55s linear infinite;
+  animation: execMarquee 46s linear infinite;
 }
 .item {
   font-family: var(--ff-body);
-  font-size: 0.88rem;
-  font-weight: 500;
+  font-size: 0.74rem;
+  font-weight: 600;
   white-space: nowrap;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--muted);
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.82);
 }
-.sep { color: var(--saffron); opacity: 0.55; font-size: 0.7rem; user-select: none; }
+.sep { color: var(--saffron); font-size: 0.6rem; user-select: none; }
 
 @keyframes execMarquee {
   from { transform: translateX(0); }
@@ -33,6 +36,6 @@
   .track { animation: none; }
 }
 @media (max-width: 768px) {
-  .marquee { margin-top: 2.5rem; }
-  .track { gap: 1.1rem; }
+  .track { gap: 1.4rem; }
+  .item { font-size: 0.68rem; }
 }

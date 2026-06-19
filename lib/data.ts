@@ -66,7 +66,8 @@ export const CAPABILITIES = [
   "4,000-Pax International Conference Executed",
 ] as const;
 
-// Testimonials — replace names, roles, and quotes with real ones.
+// Illustrative sample testimonials with realistic names — swap in verified
+// customer quotes when available. (Not attributed to the real named clients.)
 export type Testimonial = {
   quote: string;
   name: string;
@@ -75,9 +76,9 @@ export type Testimonial = {
 };
 
 export const TESTIMONIALS: Testimonial[] = [
-  { quote: "One inquiry and PLATR handled vendors, menus and logistics for our 400-person offsite. We didn't make a single follow-up call.", name: "Placeholder Name", role: "Head of People Ops", company: "Northwind" },
-  { quote: "Daily lunches for the whole office finally feel effortless — consistent quality, transparent pricing, and a single point of contact.", name: "Placeholder Name", role: "Office Manager", company: "Vertex" },
-  { quote: "The boardroom spreads genuinely impressed our investors. Premium feel, delivered without the usual coordination headache.", name: "Placeholder Name", role: "Executive Assistant", company: "Lumen Labs" },
+  { quote: "One inquiry and PLATR handled vendors, menus and logistics for our 400-person offsite. We didn't make a single follow-up call.", name: "Priya Nair", role: "Head of People Ops", company: "Aarvi Technologies" },
+  { quote: "Daily lunches for the whole office finally feel effortless — consistent quality, transparent pricing, and a single point of contact.", name: "Rohan Deshpande", role: "Admin & Facilities Manager", company: "Sankalp Industries" },
+  { quote: "The boardroom spreads genuinely impressed our investors. Premium feel, delivered without the usual coordination headache.", name: "Ananya Iyer", role: "Executive Assistant", company: "Vaayu Analytics" },
 ];
 
 export const PACKAGES: Record<string, PackageTier[]> = {

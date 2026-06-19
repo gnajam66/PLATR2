@@ -1,9 +1,9 @@
 .hero {
   position: relative;
-  min-height: 100vh;
+  min-height: calc(100vh - var(--bar-h));
   display: flex;
   align-items: center;
-  padding: 8.5rem 0 4rem;
+  padding: 8rem 0 4rem;
   overflow: hidden;
   isolation: isolate;
 }

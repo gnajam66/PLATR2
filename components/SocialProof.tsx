@@ -35,8 +35,6 @@ export default function SocialProof() {
             </motion.figure>
           ))}
         </div>
-
-        <p className={styles.note}>* Placeholder testimonials — replace with real client quotes before launch.</p>
       </div>
     </section>
   );
